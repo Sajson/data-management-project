@@ -17,10 +17,10 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Get()
-  @ApiOperation({ summary: 'Pobierz wszystkich użytkowników' })
+  @ApiOperation({ summary: 'Pobierz wszystkich uzytkownikow' })
   @ApiResponse({
     status: 200,
-    description: 'Lista wszystkich użytkowników',
+    description: 'Lista wszystkich uzytkownikow',
     type: [User],
   })
   findAll(): Promise<User[]> {
@@ -28,10 +28,10 @@ export class UsersController {
   }
 
   @Get(':id')
-  @ApiOperation({ summary: 'Pobierz użytkownika według ID' })
+  @ApiOperation({ summary: 'Pobierz uzytkownika wedlug ID' })
   @ApiResponse({
     status: 200,
-    description: 'Użytkownik został znaleziony',
+    description: 'Uzytkownik zostal znaleziony',
     type: User,
   })
   findOne(@Param('id') id: string): Promise<User> {
@@ -39,10 +39,10 @@ export class UsersController {
   }
 
   @Post()
-  @ApiOperation({ summary: 'Utwórz nowego użytkownika' })
+  @ApiOperation({ summary: 'Utworz nowego uzytkownika' })
   @ApiResponse({
     status: 201,
-    description: 'Użytkownik został utworzony',
+    description: 'Uzytkownik zostal utworzony',
     type: User,
   })
   create(@Body() user: Partial<User>): Promise<User> {
@@ -50,10 +50,10 @@ export class UsersController {
   }
 
   @Put(':id')
-  @ApiOperation({ summary: 'Aktualizuj użytkownika' })
+  @ApiOperation({ summary: 'Aktualizuj uzytkownika' })
   @ApiResponse({
     status: 200,
-    description: 'Użytkownik został zaktualizowany',
+    description: 'Uzytkownik zostal zaktualizowany',
     type: User,
   })
   update(@Param('id') id: string, @Body() user: Partial<User>): Promise<User> {
@@ -61,10 +61,10 @@ export class UsersController {
   }
 
   @Delete(':id')
-  @ApiOperation({ summary: 'Usuń użytkownika' })
+  @ApiOperation({ summary: 'Usun uzytkownika' })
   @ApiResponse({
     status: 200,
-    description: 'Użytkownik został usunięty',
+    description: 'Uzytkownik zostal usuniety',
     type: User,
   })
   remove(@Param('id') id: string): Promise<void> {

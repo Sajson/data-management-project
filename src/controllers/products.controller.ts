@@ -20,7 +20,7 @@ export class ProductsController {
   @ApiOperation({ summary: 'Pobierz wszystkie produkty' })
   @ApiResponse({
     status: 200,
-    description: 'Lista wszystkich produktów',
+    description: 'Lista wszystkich produktow',
     type: [Product],
   })
   findAll(): Promise<Product[]> {
@@ -28,10 +28,10 @@ export class ProductsController {
   }
 
   @Get(':id')
-  @ApiOperation({ summary: 'Pobierz produkt według ID' })
+  @ApiOperation({ summary: 'Pobierz produkt wedlug ID' })
   @ApiResponse({
     status: 200,
-    description: 'Produkt został znaleziony',
+    description: 'Produkt zostal znaleziony',
     type: Product,
   })
   findOne(@Param('id') id: string): Promise<Product> {
@@ -39,10 +39,10 @@ export class ProductsController {
   }
 
   @Post()
-  @ApiOperation({ summary: 'Utwórz nowy produkt' })
+  @ApiOperation({ summary: 'Utworz nowy produkt' })
   @ApiResponse({
     status: 201,
-    description: 'Produkt został utworzony',
+    description: 'Produkt zostal utworzony',
     type: Product,
   })
   create(@Body() product: Partial<Product>): Promise<Product> {
@@ -53,7 +53,7 @@ export class ProductsController {
   @ApiOperation({ summary: 'Aktualizuj produkt' })
   @ApiResponse({
     status: 200,
-    description: 'Produkt został zaktualizowany',
+    description: 'Produkt zostal zaktualizowany',
     type: Product,
   })
   update(
@@ -64,10 +64,10 @@ export class ProductsController {
   }
 
   @Delete(':id')
-  @ApiOperation({ summary: 'Usuń produkt' })
+  @ApiOperation({ summary: 'Usun produkt' })
   @ApiResponse({
     status: 204,
-    description: 'Produkt został usunięty',
+    description: 'Produkt zostal usuniety',
   })
   remove(@Param('id') id: string): Promise<void> {
     return this.productsService.remove(+id);

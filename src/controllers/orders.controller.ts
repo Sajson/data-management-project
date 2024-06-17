@@ -17,10 +17,10 @@ export class OrdersController {
   constructor(private readonly ordersService: OrdersService) {}
 
   @Get()
-  @ApiOperation({ summary: 'Pobierz wszystkie zamówienia' })
+  @ApiOperation({ summary: 'Pobierz wszystkie zamowienia' })
   @ApiResponse({
     status: 200,
-    description: 'Lista wszystkich zamówień',
+    description: 'Lista wszystkich zamowien',
     type: [Order],
   })
   findAll(): Promise<Order[]> {
@@ -28,10 +28,10 @@ export class OrdersController {
   }
 
   @Get(':id')
-  @ApiOperation({ summary: 'Pobierz zamówienie według ID' })
+  @ApiOperation({ summary: 'Pobierz zamowienie wedlug ID' })
   @ApiResponse({
     status: 200,
-    description: 'Zamówienie zostało znalezione',
+    description: 'Zamowienie zostalo znalezione',
     type: Order,
   })
   findOne(@Param('id') id: string): Promise<Order> {
@@ -39,10 +39,10 @@ export class OrdersController {
   }
 
   @Post()
-  @ApiOperation({ summary: 'Utwórz nowe zamówienie' })
+  @ApiOperation({ summary: 'Utworz nowe zamowienie' })
   @ApiResponse({
     status: 201,
-    description: 'Zamówienie zostało utworzone',
+    description: 'Zamowienie zostalo utworzone',
     type: Order,
   })
   create(@Body() order: Partial<Order>): Promise<Order> {
@@ -50,10 +50,10 @@ export class OrdersController {
   }
 
   @Put(':id')
-  @ApiOperation({ summary: 'Aktualizuj zamówienie' })
+  @ApiOperation({ summary: 'Aktualizuj zamowienie' })
   @ApiResponse({
     status: 200,
-    description: 'Zamówienie zostało zaktualizowane',
+    description: 'Zamowienie zostalo zaktualizowane',
     type: Order,
   })
   update(
@@ -64,10 +64,10 @@ export class OrdersController {
   }
 
   @Delete(':id')
-  @ApiOperation({ summary: 'Usuń zamówienie' })
+  @ApiOperation({ summary: 'Usun zamowienie' })
   @ApiResponse({
     status: 204,
-    description: 'Zamówienie zostało usunięte',
+    description: 'Zamowienie zostalo usuniete',
   })
   remove(@Param('id') id: string): Promise<void> {
     return this.ordersService.remove(+id);

@@ -6,7 +6,6 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { User } from './user.entity';
-import { ApiProperty } from '@nestjs/swagger';
 
 @Entity()
 export class Order {

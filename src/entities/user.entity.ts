@@ -11,21 +11,21 @@ export class User {
   @PrimaryGeneratedColumn()
   @ApiProperty({
     example: 1,
-    description: 'Unikatowy identyfikator użytkownika',
+    description: 'Unikatowy identyfikator uzytkownika',
   })
   user_id: number;
 
   @Column({ unique: true })
   @ApiProperty({
     example: 'jan_kowalski',
-    description: 'Unikatowa nazwa użytkownika',
+    description: 'Unikatowa nazwa uzytkownika',
   })
   username: string;
 
   @Column()
   @ApiProperty({
     example: 'password123',
-    description: 'Hasło użytkownika w postaci zahashowanej',
+    description: 'Haslo uzytkownika w postaci zahashowanej',
   })
   password: string;
 
@@ -34,11 +34,11 @@ export class User {
   email: string;
 
   @Column()
-  @ApiProperty({ example: 'Adam', description: 'Imię użytkownika' })
+  @ApiProperty({ example: 'Adam', description: 'Imiel uzytkownika' })
   first_name: string;
 
   @Column()
-  @ApiProperty({ example: 'Kowalski', description: 'Nazwisko użytkownika' })
+  @ApiProperty({ example: 'Kowalski', description: 'Nazwisko uzytkownika' })
   last_name: string;
 
   @Column('text')
@@ -55,7 +55,7 @@ export class User {
   @CreateDateColumn()
   @ApiProperty({
     example: '2021-01-01T12:00:00.000Z',
-    description: 'Data utworzenia użytkownika',
+    description: 'Data utworzenia uzytkownika',
   })
   created_at: Date;
 }
